@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^all_users/$', direct_to_template,
         {'template': 'all_users.html'}),
     url(r'^list_users/$', 'portfolios.views.list_users'),
+    url(r'^delete/$', 'portfolios.views.delete'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

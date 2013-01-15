@@ -31,6 +31,9 @@
 	        <li><a href="/user/{{ user.username }}/">profile</a></li>
 	        <li><a href="/logout/">logout</a></li>
 	        <li><a href="/password_change/">change password</a></li>
+		{% if not user.is_staff %}
+	          <li><a href="/delete/">delete profile</a></li>
+		{% endif %}
 	      {% else %}
 	        <li><a href="/login/">login</a></li>
 	        <li><a href="/register/">sign up</a></li	        

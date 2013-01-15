@@ -2,7 +2,7 @@
 {% block title %}{{ username }}'s portfolio{% endblock %}
 {% block head%}{{ username }}'s portfolio{% endblock %}
 {% block content %}
-  {% if user.is_authenticated %}
+  {% if user.is_authenticated and user.username == username %}
     <p><a href="/upload_image/">Upload</a> a photo</p>
   {% endif %}
   <a href="/gallery/{{ username }}/">Gallery</a>

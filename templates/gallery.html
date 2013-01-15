@@ -1,9 +1,12 @@
-{% extends "base.html" %}
+{% extends "profile_base.html" %}
 {% block title %}{{ username }}'s gallery{% endblock %}
 {% block head%}{{ username }}'s gallery{% endblock %}
 {% block content %}
   {% for image in image_list %}
-    <img src="/{{ image.image.url }}">
+    <a href="/{{ image.image.url }}"><img src="/{{ image.image.url }}"></a>
     <p>{{ image.title }}</p>
   {% endfor %}
+{% endblock %}
+{% block footer %}
+  <a href="/">Project M</a>
 {% endblock %}

@@ -61,6 +61,16 @@ def list_users(request):
     # Convert the response to JSON.
     return HttpResponse(json.dumps(result))
 
+def delete(request):
+    """
+    Deletes a user's account and all associated data.
+    """
+    user = request.user
+    if user and user.is_authenticated() and not user.is_staff:
+        User.objects.get(username=user.username).delete()
+    return HttpResponseRedirect('/')
+        
+
 # Test views follow:
 def xhr_test(request):
     if request.is_ajax():
