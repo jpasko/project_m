@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Images test page{% endblock %}
+{% block head%}Images test page{% endblock %}
+
+{%block content %}
+  {% if user.username %}
+    <p>Welcome {{ user.username }}</p>
+  {% else %}
+    <p>Not logged in</p>
+  {% endif %}
+{% endblock %}

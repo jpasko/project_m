@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ username }}'s portfolio{% endblock %}
+{% block head%}{{ username }}'s portfolio{% endblock %}
+{% block content %}
+  {% if user.is_authenticated %}
+    <p><a href="/upload_image/">Upload</a> a photo</p>
+  {% endif %}
+  <a href="/gallery/{{ username }}/">Gallery</a>
+{% endblock %}

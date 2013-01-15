@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Project M Portfolios{% endblock %}
+{% block head%}Welcome to Project M Portfolios{% endblock %}
+
+{%block content %}
+  {% if user.username %}
+    <p>Welcome {{ user.username }}</p>
+  {% endif %}
+  <p>List of all current <a href="/all_users/">users</a></p>
+{% endblock %}

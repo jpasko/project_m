@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Upload image{% endblock %}
+{% block head %}Upload image{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<form method="post" action="." enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="submit">
+</form>
+{% else %}
+<p>Please <a href="/login/">login</a> or <a href="/register/">sign up</a> before uploading an image</p>
+{% endif %}
+{% endblock %}
